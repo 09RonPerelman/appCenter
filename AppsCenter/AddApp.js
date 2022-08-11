@@ -74,14 +74,14 @@ function createNewApp() {
   const desc = "this company dont have desc"
  const  companyName = "this app dont have company"
   const newApp = 
-    {
+    [{
       name: document.getElementById("function_code_name").value,
       price: document.getElementById("function_code_number").value,
       companyName: document.getElementById("companyName").value,
       desc: document.getElementById("description").value,
       imageUrl: document.getElementById("imageUrl").value,
       id: getNextId
-    };
+    }];
 
     checkForm(newApp.companyName,newApp.imageUrl,newApp.desc,error);
 
@@ -94,7 +94,7 @@ function createNewApp() {
         return true;
     }
     if(nameVal === true && numberVal === true){
-      addItemToTheList((newApp))
+      addItemToTheList.bind(newApp)
     }
 
 }
