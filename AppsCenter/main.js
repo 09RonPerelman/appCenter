@@ -7,6 +7,7 @@ const getData = () => {
   return JSON.parse(localStorage.getItem("applications"));
 };
 
+
 document.addEventListener("DOMContentLoaded", () => {});
 
 window.onload = () => {
@@ -48,4 +49,8 @@ function search(filter) {
     (app) => app.name.indexOf(filter) !== -1
   );
   render(filteredData);
+}
+
+function navigation() {
+  window.open("addAplication.html")
 }

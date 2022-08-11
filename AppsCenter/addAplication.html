@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel ="stylesheet" href="add.css">
+    <title>AppsCenter</title>
+  </head>
+  <body>
+    <div >
+      <img src="images/AppsCenter.png" class ="center" />
+    </div>
+    <div>
+        <form class="need-validation">
+      <div>
+        <label for="firstName">App name</label>
+        <input type="text" id="function_code_name" name="function_code">
+<span id="error"></span>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div>
+        <label for="firstName">App Price</label>
+        <input type="text" id="function_code_number" name="function_code">
+<span id="error"></span>
+        <div class="invalid-feedback"></div>
+      </div>
+      <div>
+        <label for="firstName">App Description</label>
+        <input
+          type="text"
+          class="description"
+          id="description"
+          placeholder=""
+          value=""
+          required=""
+        />
+        <div class="invalid-feedback"></div>
+      </div>
+      <div>
+        <label for="firstName">Company Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="companyName"
+          placeholder=""
+          value=""
+          required=""
+        />
+        <div class="invalid-feedback"></div>
+      </div>
+      <div>
+        <label for="firstName">Image Url</label>
+        <input
+          type="text"
+          class="form-control"
+          id="imageUrl"
+          placeholder=""
+          value=""
+          required=""
+        />
+        <div class="invalid-feedback"></div>
+        <button type = "button" onclick="createNewApp()" class = "button"> create new app</button>
+      </div>
+    </form>
+    </div>
+
+    <script src="applications.js"></script>
+    <script src="AddApp.js"></script>
+  </body>
+</html>
