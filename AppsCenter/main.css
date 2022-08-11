@@ -7,6 +7,7 @@
   .searchbar{
     margin-top: 200 px;
     margin-bottom: 5%;
+    display: inline-block;
     width : 25%;
   }  
   .button {
@@ -20,4 +21,7 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
+  }
+  body{
+    align-content: center;
   }
