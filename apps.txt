@@ -1,0 +1,3 @@
+UPDATE applications
+SET imageurl = 'Help.png'
+WHERE imageurl = 'help.png'
