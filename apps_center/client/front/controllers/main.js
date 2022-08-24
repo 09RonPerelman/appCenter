@@ -51,6 +51,7 @@ const deleteApp = async (id) => {
 
 document.addEventListener("DOMContentLoaded", () => {
   loadApp = loadApps();
+  render(loadApp);
 });
 
 const apps = document.querySelector("#productHolder");
@@ -58,7 +59,7 @@ const apps = document.querySelector("#productHolder");
 function createCard(app) {
   fillTheVoid(app);
   let code = `
-    <div class="card mb-3" style="max-width: 540px;">
+    <div class="card mb-3 center" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
       <img src="../assets/images/${app.imageUrl}" class="img-fluid rounded-start" alt="${app.imageUrl}">
@@ -97,10 +98,10 @@ function navigation() {
 }
 
 function fillTheVoid(app) {
- fillDescription(app)
- fillcompanyname(app)
-fillimageurl(app)
-return app
+  fillDescription(app);
+  fillcompanyname(app);
+  fillimageurl(app);
+  return app;
 }
 
 const fillcompanyname = () => {
@@ -138,3 +139,53 @@ const fillimageurl = () => {
     .then((result) => console.log(result))
     .catch((error) => console.log("error", error));
 };
+
+
+const getNextId = () => {
+  let id = localStorage.getItem("id");
+  localStorage.setItem("id", ++id);
+
+  return id;
+};
+
+document.addEventListener("DOMContentLoaded", () => {
+ 
+});
+
+
+
+
+const putNewApp = () => {
+createApp()
+}
+
+
+const createApp = async() => {
+  var myHeaders = new Headers();
+  myHeaders.append("Content-Type", "application/json");
+  
+  var raw = JSON.stringify({
+    name: document.getElementById("name").value,
+    price: document.getElementById("price").value,
+    companyName: document.getElementById("companyName").value,
+    desc: document.getElementById("description").value,
+    imageUrl: document.getElementById("imageUrl").value,
+  });
+  
+  var requestOptions = {
+    method: 'POST',
+    headers: myHeaders,
+    body: raw,
+    redirect: 'follow'
+  };
+
+try{
+  
+const res = await fetch("http://localhost:3000/api/applications", requestOptions)
+const data =await res.json();
+render(data)
+}
+catch{
+ error => console.log('error', error);
+}
+}
