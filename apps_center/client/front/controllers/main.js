@@ -62,7 +62,7 @@ function createCard(app) {
     <div class="card mb-3 center" style="max-width: 540px;">
   <div class="row g-0">
     <div class="col-md-4">
-      <img src="../assets/images/${app.imageUrl}" class="img-fluid rounded-start" alt="${app.imageUrl}">
+      <img src="../assets/images/${app.imageurl}" class="img-fluid rounded-start" alt="${app.imageurl}">
     </div>
     <div class="col-md-4">
       <div class="card-body">

@@ -33,7 +33,7 @@ async function deleteAppById(id) {
 
   async function fillimageurl(app) {
     app = await getData(`UPDATE applications
-    SET imageurl = 'help.png'
+    SET imageurl = 'Help.png'
     WHERE imageurl = 'undefined'`);
     return app;
   }
